@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Name=Firefox Work
+GenericName=Web Browser
+Exec=firefox -P work
+Icon=firefox
+Terminal=false
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;firefox-work;firefoxwork;
+StartupWMClass=firefox;
+Actions=new-window;new-private-window;profile-manager-window;
+
+[Desktop Action new-window]
+Name=New window
+Exec=firefox -P work --new-window
+
+[Desktop Action new-private-window]
+Name=New Private Window
+Exec=firefox -P work -private-window 
+
+[Desktop Action profile-manager-window]
+Exec=firefox -P
+Name=Open the Profile Manager
