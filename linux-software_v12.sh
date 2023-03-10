@@ -135,8 +135,8 @@ do
             gimp
             cd /home/$USER/linux-software.sh
 						git clone https://github.com/Diolinux/PhotoGIMP.git
-						cd /home/$USER/PhotoGIMP/linux-software.sh/.var/app/org.gimp.GIMP/config/GIMP
-						mv 2.10 /home/$USER/.config/GIMP
+						cd /home/$USER/PhotoGIMP/linux-software.sh/.var/app/org.gimp.GIMP/config/GIMP/
+						mv 2.10 /home/$USER/.config/GIMP/
 						cd /home/$USER/linux-software.sh
 						rm -rf PhotoGIMP            
             ;;
@@ -170,12 +170,14 @@ do
             then
             	sudo apt install extrepo
 							sudo extrepo enable vscodium
+							sudo apt update
 							sudo apt install codium           	
     				fi
     				if [[ $distro -eq 2 ]]
             then
             	sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 							printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
+							sudo dnf update
 							sudo dnf install codium
 
             fi
@@ -196,7 +198,7 @@ do
         		echo "Libre office & language tools"
         		if [[ $distro -eq 1 ]]
         		then
-        		sudo apt install libreoffice-lightproof-en hyphen-en-gb libreoffice-help-en-gb mythes-en-us openclipart-libreoffice 
+        			sudo apt install libreoffice-lightproof-en hyphen-en-gb libreoffice-help-en-gb mythes-en-us openclipart-libreoffice 
         		fi	
         		wget -P /home/$USER/linux-software.sh https://extensions.libreoffice.org/assets/downloads/3710/1673297554/LanguageTool-6.0.oxt
         		;;
@@ -215,7 +217,9 @@ do
         		fi
         		if [[ $distro -eq 2 ]]
         		then
-        			sudo dnf copr enable atim/heroic-games-launcher && sudo dnf copr enable atim/heroic-games-launcher
+        			sudo dnf copr enable atim/heroic-games-launcher 
+        			sudo dnf update
+        			sudo dnf install heroic-games-launcher-bin
         		fi
         		;;
         9)
@@ -227,6 +231,7 @@ do
         		if [[ $distro -eq 2 ]]   	
         		then
         			sudo dnf copr enable zeno/scrcpy
+        			sudo dnf update
 							sudo dnf install scrcpy
 						fi
         		;;
