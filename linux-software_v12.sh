@@ -115,8 +115,8 @@ for choice in $choices
 do
     case $choice in
         1)
-            echo "Flatpak & flatseal"
-            if [[ $distro -eq 1 ]]
+			echo "Flatpak & flatseal"
+			if [[ $distro -eq 1 ]]
 			then
 				sudo apt install flatpak
 			fi
@@ -217,7 +217,7 @@ do
         	;;
         9)
         	echo "Scrcpy"
-        	if [[ $distro -eq 1 ]]   	
+        	if [[ $distro -eq 1 ]]
         	then
         		sudo apt install scrcpy
         	fi
