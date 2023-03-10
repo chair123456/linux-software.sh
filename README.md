@@ -1,2 +1,2 @@
-# bash script linux-software.sh
+# Bash Script linux-software.sh
 Install packages for Debian and Fedora
