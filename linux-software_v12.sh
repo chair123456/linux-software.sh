@@ -17,9 +17,7 @@ then
 	echo debian https://www.debian.org/doc/
 	sudo apt update
 	
-	sudo echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >> /etc/apt/sources.list
-	sudo echo "deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib" >> /etc/apt/sources.list
-	sudo echo "deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib" >> /etc/apt/sources.list
+	sudo echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free\ndeb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib\ndeb https://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib"" >> /etc/apt/sources.list
 	sudo apt install fasttrack-archive-keyring && sudo dpkg --add-architecture i386
 
 	sudo apt update && sudo apt upgrade -y
@@ -170,21 +168,25 @@ do
             echo "VSCodium" 
             if [[ $distro -eq 1 ]]
             then
-            	wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+            	sudo apt install extrepo
+							sudo extrepo enable vscodium
+							sudo apt install codium
 
-    							| gpg --dearmor \
-
-    							| sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
-    					echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
-
-    							| sudo tee /etc/apt/sources.list.d/vscodium.list
-    					sudo apt install codium
+            	
     				fi
     				if [[ $distro -eq 2 ]]
             then
-            	sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
-            	printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
-            	sudo dnf install codium
+            	sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
+							[gitlab.com_paulcarroty_vscodium_repo]
+							name=gitlab.com_paulcarroty_vscodium_repo
+							baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+							enabled=1
+							gpgcheck=1
+							repo_gpgcheck=1
+							gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+							metadata_expire=1h
+							EOF
+							sudo dnf install codium 
             fi
             ;;
         5)	
