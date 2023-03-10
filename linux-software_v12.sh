@@ -117,10 +117,10 @@ do
         1)
             echo "Flatpak & flatseal"
             if [[ $distro -eq 1 ]]
-						then
-							sudo apt install flatpak
-						fi
-						sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && sudo flatpak install --system com.github.tchx84.Flatseal
+			then
+				sudo apt install flatpak
+			fi
+			sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && sudo flatpak install --system com.github.tchx84.Flatseal
             ;;
         2)
             echo "Photo gimp"
@@ -134,11 +134,11 @@ do
             fi	
             gimp
             cd /home/$USER/linux-software.sh
-						git clone https://github.com/Diolinux/PhotoGIMP.git
-						cd /home/$USER/PhotoGIMP/linux-software.sh/.var/app/org.gimp.GIMP/config/GIMP
-						mv 2.10 /home/$USER/.config/GIMP
-						cd /home/$USER/linux-software.sh
-						rm -rf PhotoGIMP            
+			git clone https://github.com/Diolinux/PhotoGIMP.git
+			cd /home/$USER/PhotoGIMP/linux-software.sh/.var/app/org.gimp.GIMP/config/GIMP
+			mv 2.10 /home/$USER/.config/GIMP
+			cd /home/$USER/linux-software.sh
+			rm -rf PhotoGIMP            
             ;;
         3)
             echo "Firefox js, custom luncher,extensions"
@@ -146,120 +146,118 @@ do
             mv Firefox.desktop /home/$USER/.local/share/applications/
 						firefox -CreateProfile work
 						
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3343599/cookie_quick_manager-0.5rc2.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3902154/decentraleyes-2.0.17.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3009842/enhanced_h264ify-2.1.0.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4024031/facebook_container-2.3.9.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4058426/multi_account_containers-8.1.2.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3990496/get_rss_feed_url-2.2.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3626312/gsconnect-8.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4071150/i_dont_care_about_cookies-3.4.6.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4078287/keepassxc_browser-1.8.5.1.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4072734/return_youtube_dislikes-3.0.0.8.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4002882/tab_session_manager-6.12.1.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4079064/ublock_origin-1.47.4.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3816853/unpaywall-3.98.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4047133/user_agent_string_switcher-0.4.9.xpi
-						wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4067111/youtube_high_definition-109.0.0.xpi
-						
-						bash -c "$(curl -fsSL https://raw.githubusercontent.com/black7375/Firefox-UI-Fix/master/install.sh)"
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3343599/cookie_quick_manager-0.5rc2.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3902154/decentraleyes-2.0.17.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3009842/enhanced_h264ify-2.1.0.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4024031/facebook_container-2.3.9.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4058426/multi_account_containers-8.1.2.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3990496/get_rss_feed_url-2.2.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3626312/gsconnect-8.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4071150/i_dont_care_about_cookies-3.4.6.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4078287/keepassxc_browser-1.8.5.1.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4072734/return_youtube_dislikes-3.0.0.8.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4002882/tab_session_manager-6.12.1.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4079064/ublock_origin-1.47.4.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3816853/unpaywall-3.98.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4047133/user_agent_string_switcher-0.4.9.xpi
+			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/4067111/youtube_high_definition-109.0.0.xpi
+					
+			bash -c "$(curl -fsSL https://raw.githubusercontent.com/black7375/Firefox-UI-Fix/master/install.sh)"
             ;;
         4)
             echo "VSCodium" 
             if [[ $distro -eq 1 ]]
             then
             	sudo apt install extrepo
-							sudo extrepo enable vscodium
-							sudo apt install codium
-
-            	
-    				fi
-    				if [[ $distro -eq 2 ]]
+				sudo extrepo enable vscodium
+				sudo apt install codium           	
+    		fi
+    		if [[ $distro -eq 2 ]]
             then
             	sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
-							[gitlab.com_paulcarroty_vscodium_repo]
-							name=gitlab.com_paulcarroty_vscodium_repo
-							baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
-							enabled=1
-							gpgcheck=1
-							repo_gpgcheck=1
-							gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-							metadata_expire=1h
-							EOF
-							sudo dnf install codium 
+				[gitlab.com_paulcarroty_vscodium_repo]
+				name=gitlab.com_paulcarroty_vscodium_repo
+				baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+				enabled=1
+				gpgcheck=1
+				repo_gpgcheck=1
+				gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+				metadata_expire=1h
+				EOF
+				sudo dnf install codium 
             fi
             ;;
         5)	
-        		echo "gnome extension"
-        		if [[ $distro -eq 1 ]]
-        		then
-        			sudo apt install gnome-shell-extension-desktop-icons-ng gnome-shell-extension-dash-to-panel gnome-shell-extension-arc-menu gnome-shell-extension-appindicator gnome-tweaks gnome-shell-extension-gsconnect gnome-tweaks
-        		fi
-        		if [[ $distro -eq 2 ]]
-        		then
-        			sudo dnf install gnome-shell-extension-appindicator.noarch gnome-shell-extension-gsconnect.x86_64 gnome-shell-extension-drive-menu.noarch gnome-tweaks.noarch
-        		fi
-        		sudo flatpak install com.mattjakeman.ExtensionManager
-        		;;
+        	echo "gnome extension"
+        	if [[ $distro -eq 1 ]]
+        	then
+        		sudo apt install gnome-shell-extension-desktop-icons-ng gnome-shell-extension-dash-to-panel gnome-shell-extension-arc-menu gnome-shell-extension-appindicator gnome-tweaks gnome-shell-extension-gsconnect gnome-tweaks
+        	fi
+        	if [[ $distro -eq 2 ]]
+        	then
+				sudo dnf install gnome-shell-extension-appindicator.noarch gnome-shell-extension-gsconnect.x86_64 gnome-shell-extension-drive-menu.noarch gnome-tweaks.noarch
+        	fi
+        	sudo flatpak install com.mattjakeman.ExtensionManager
+        	;;
         6)
-        		echo "Libre office & language tools"
-        		if [[ $distro -eq 1 ]]
-        		then
-        			sudo apt install libreoffice-lightproof-en hyphen-en-gb libreoffice-help-en-gb mythes-en-us openclipart-libreoffice 
-        		fi	
-        		wget -P /home/$USER/linux-software.sh https://extensions.libreoffice.org/assets/downloads/3710/1673297554/LanguageTool-6.0.oxt
-        		;;
+        	echo "Libre office & language tools"
+        	if [[ $distro -eq 1 ]]
+        	then
+        		sudo apt install libreoffice-lightproof-en hyphen-en-gb libreoffice-help-en-gb mythes-en-us openclipart-libreoffice 
+        	fi	
+        	wget -P /home/$USER/linux-software.sh https://extensions.libreoffice.org/assets/downloads/3710/1673297554/LanguageTool-6.0.oxt
+        	;;
         7)
-        		echo ".config settings"
-        		cd /home/$USER/linux-software.sh/.config
-        		mv .config /home/$USER/.config 
-        		;;
+        	echo ".config settings"
+        	cd /home/$USER/linux-software.sh/.config
+        	mv .config /home/$USER/.config 
+        	;;
         8)
-        		echo "Heroic game luncher"
-        		if [[ $distro -eq 1 ]]        		
-        		then
-        			wget https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.6.1/heroic_2.6.1_amd64.deb
-        			sudo dpkg -i heroic_2.6.1_amd64.deb
-        			rm -rf heroic_2.6.1_amd64.deb 
-        		fi
-        		if [[ $distro -eq 2 ]]
-        		then
-        			sudo dnf copr enable atim/heroic-games-launcher && sudo dnf copr enable atim/heroic-games-launcher
-        		fi
-        		;;
+        	echo "Heroic game luncher"
+        	if [[ $distro -eq 1 ]]        		
+        	then
+        		wget https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.6.1/heroic_2.6.1_amd64.deb
+        		sudo dpkg -i heroic_2.6.1_amd64.deb
+        		rm -rf heroic_2.6.1_amd64.deb 
+        	fi
+        	if [[ $distro -eq 2 ]]
+        	then
+        		sudo dnf copr enable atim/heroic-games-launcher && sudo dnf copr enable atim/heroic-games-launcher
+        	fi
+        	;;
         9)
-        		echo "Scrcpy"
-        		if [[ $distro -eq 1 ]]   	
-        		then
-        			sudo apt install scrcpy
-        		fi
-        		if [[ $distro -eq 2 ]]   	
-        		then
-        			sudo dnf copr enable zeno/scrcpy
-							sudo dnf install scrcpy
-						fi
-        		;;
+        	echo "Scrcpy"
+        	if [[ $distro -eq 1 ]]   	
+        	then
+        		sudo apt install scrcpy
+        	fi
+        	if [[ $distro -eq 2 ]]   	
+        	then
+        		sudo dnf copr enable zeno/scrcpy
+				sudo dnf install scrcpy
+			fi
+        	;;
         10)
-        		echo "Nix package manager"
-        		sudo sh <(curl -L https://nixos.org/nix/install) --daemon
-        		;;
+        	echo "Nix package manager"
+        	sudo sh <(curl -L https://nixos.org/nix/install) --daemon
+        	;;
         11)
-        		echo "Virt_manager"
-        		if [[ $distro -eq 1 ]]
-        		then
-        			sudo apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
-        		fi
-						if [[ $distro -eq 2 ]]
-						then
-							sudo dnf install @virtualization
-						fi
-            echo sudo virsh net-autostart default
-						echo sudo usermod -aG libvirt $USER 
-						echo sudo usermod -aG libvirt-qemu $USER
-						echo sudo usermod -aG kvm $USER
-						echo sudo usermod -aG input $USER
-						echo sudo usermod -aG disk $USER
-        		;;
+        	echo "Virt_manager"
+        	if [[ $distro -eq 1 ]]
+        	then
+        		sudo apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
+        	fi
+			if [[ $distro -eq 2 ]]
+			then
+				sudo dnf install @virtualization
+			fi
+			echo sudo virsh net-autostart default
+			echo sudo usermod -aG libvirt $USER 
+			echo sudo usermod -aG libvirt-qemu $USER
+			echo sudo usermod -aG kvm $USER
+			echo sudo usermod -aG input $USER
+			echo sudo usermod -aG disk $USER
+        	;;
     esac
 done
 
