@@ -17,7 +17,7 @@ then
 	echo debian https://www.debian.org/doc/
 	sudo apt update
 	
-	sudo echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free\ndeb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib\ndeb https://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib"" >> /etc/apt/sources.list
+	sudo echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free\ndeb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib\ndeb https://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib" >> /etc/apt/sources.list
 	sudo apt install fasttrack-archive-keyring && sudo dpkg --add-architecture i386
 
 	sudo apt update && sudo apt upgrade -y
@@ -237,16 +237,16 @@ do
         	then
         		sudo apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
         	fi
-			if [[ $distro -eq 2 ]]
-			then
-				sudo dnf install @virtualization
-			fi
-			echo sudo virsh net-autostart default
-			echo sudo usermod -aG libvirt $USER 
-			echo sudo usermod -aG libvirt-qemu $USER
-			echo sudo usermod -aG kvm $USER
-			echo sudo usermod -aG input $USER
-			echo sudo usermod -aG disk $USER
+					if [[ $distro -eq 2 ]]
+					then
+						sudo dnf install @virtualization
+					fi
+					echo sudo virsh net-autostart default
+					echo sudo usermod -aG libvirt $USER 
+					echo sudo usermod -aG libvirt-qemu $USER
+					echo sudo usermod -aG kvm $USER
+					echo sudo usermod -aG input $USER
+					echo sudo usermod -aG disk $USER
         	;;
     esac
 done
