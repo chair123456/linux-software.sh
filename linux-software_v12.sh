@@ -144,7 +144,7 @@ do
             echo "Firefox js, custom luncher,extensions"
             cd /home/$USER/linux-software.sh
             mv Firefox.desktop /home/$USER/.local/share/applications/
-						firefox -CreateProfile work
+			firefox -CreateProfile work
 						
 			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3343599/cookie_quick_manager-0.5rc2.xpi
 			wget -P /home/$USER/linux-software.sh/firefox-extensions https://addons.mozilla.org/firefox/downloads/file/3902154/decentraleyes-2.0.17.xpi
@@ -174,17 +174,7 @@ do
     		fi
     		if [[ $distro -eq 2 ]]
             then
-            	sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
-				[gitlab.com_paulcarroty_vscodium_repo]
-				name=gitlab.com_paulcarroty_vscodium_repo
-				baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
-				enabled=1
-				gpgcheck=1
-				repo_gpgcheck=1
-				gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-				metadata_expire=1h
-				EOF
-				sudo dnf install codium 
+            	
             fi
             ;;
         5)	
