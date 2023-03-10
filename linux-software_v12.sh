@@ -30,7 +30,7 @@ then
 	sudo apt install fonts-crosextra-carlito fonts-crosextra-caladea libdvd-pkg printer-driver-all cups flatpak && sudo dpkg-reconfigure libdvd-pkg  
 fi
 
-if [ $distro -eq 2 && $option -eq 1 ]
+if [[ $distro -eq 2 && $option -eq 1 ]]
 then
 	echo fedora https://docs.fedoraproject.org/en-US/quick-docs
 	sudo dnf update
