@@ -216,7 +216,7 @@ options=(1 "Virt-manager" off
          6 "Scrcpy" off 
          7 "Gnome extensions" off   
          8 "VSCodium" off
-         9 "Virtualbox Guest Additions" off)
+         9 "VM Guest Additions Linux" off)
 choices=$("${chosen[@]}" "${options[@]}")
 for choice in $choices
 do
@@ -307,8 +307,12 @@ do
         fi
         ;;
         9)
-        echo "Virtualbox Guest Additions"       
-        sudo apt install virtualbox-guest-x11 virtualbox-guest-utils
+        echo "VM Guest Additions Linux"       
+        
+	if [[ $distro -eq 1 ]]
+        then
+		sudo apt install virtualbox-guest-x11 virtualbox-guest-utils sudo apt install spice-vdagent       	
+    	fi
         ;;
     esac
 done
