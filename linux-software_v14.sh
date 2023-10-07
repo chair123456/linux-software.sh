@@ -10,13 +10,14 @@ read option
 if [[ $option -eq 1 ]]
 then
 	echo debian https://www.debian.org/doc/
-    sudo apt-add-repository --component contrib
-    sudo apt-add-repository --component non-free-firmware
+	sudo apt-add-repository --component contrib
+	sudo apt-add-repository --component non-free-firmware
 	sudo apt-add-repository --component non-free
     
-    sudo echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" >> /etc/apt/sources.list
-	sudo echo "deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib" >> /etc/apt/sources.list
-	sudo echo "deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib" >> /etc/apt/sources.list
+	sudo echo "deb http://deb.debian.org/debian bookworm-backports main contrib non-free" >> /etc/apt/sources.list
+	sudo echo "deb https://fasttrack.debian.net/debian-fasttrack/ bookworm-fasttrack main contrib" >> /etc/apt/sources.list
+ 
+ 	sudo echo "deb https://fasttrack.debian.net/debian-fasttrack/ bookworm-backports-staging main contrib" >> /etc/apt/sources.list
 	sudo apt update
 	sudo apt install fasttrack-archive-keyring extrepo && sudo dpkg --add-architecture i386
 	sudo apt update && sudo apt upgrade -y
@@ -34,9 +35,7 @@ option=0
 read option 
 if [[ $option -eq 1 ]]
 then
-	sudo apt install gnome-core file-roller gtkhash seahorse gnome-tweaks nautilus-nextcloud gnome-clocks gnome-shell-extension-gsconnect apt install gnome-software-plugin-flatpak flatpak 
-    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    sudo flatpak install com.mattjakeman.ExtensionManager -y
+	sudo apt install gnome-core gnome-tweaks gnome-software-plugin-flatpak gnome-clocks seahorse file-roller nautilus-nextcloud gtkhash gnome-shell-extension-manager gnome-shell-extension-gsconnect gnome-shell-extension-appindicator gnome-shell-extension-arc-menu gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons-ng gnome-shell-extension-gamemode
 fi
 
 
