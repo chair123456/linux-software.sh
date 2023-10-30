@@ -1,2 +1,2 @@
 # Bash Script linux-software.sh
-Install packages for Debian
+Install packages for Debian / Ubuntu
