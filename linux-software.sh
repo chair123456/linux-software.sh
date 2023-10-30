@@ -35,7 +35,7 @@ option=0
 read option 
 if [[ $option -eq 1 ]]
 then
-	apt install gnome-core gnome-tweaks gnome-software-plugin-flatpak gnome-clocks seahorse file-roller nautilus-nextcloud gtkhash gnome-shell-extension-manager gnome-shell-extension-gsconnect gnome-shell-extension-appindicator gnome-shell-extension-arc-menu gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons-ng gnome-shell-extension-gamemode
+	apt install gnome-core gnome-tweaks gnome-software-plugin-flatpak gnome-clocks seahorse file-roller nautilus-nextcloud gnome-sushi nautilus-image-converter nautilus-image-converter nautilus-admin gtkhash gnome-shell-extension-manager gnome-shell-extension-gsconnect gnome-shell-extension-appindicator gnome-shell-extension-arc-menu gnome-shell-extension-dash-to-panel gnome-shell-extension-desktop-icons-ng gnome-shell-extension-gamemode
 fi
 
 
@@ -213,4 +213,4 @@ done
 apt remove dialog
 echo Finished
 echo me.kozec.syncthingtk gitlab.newsflash com.heroicgameslauncher.hgl org.prismlauncher.PrismLauncherecho
-echo firefox-esr-l10n-en-gb thunderbird-l10n-en-gb nemo gufw bleachbit tlp menulibre gnome-software transmission nextcloud-desktop gufw
+echo firefox-esr-l10n-en-gb thunderbird-l10n-en-gb nemo gufw bleachbit tlp menulibre gnome-software transmission nextcloud-desktop gufw soundconverter brasero
